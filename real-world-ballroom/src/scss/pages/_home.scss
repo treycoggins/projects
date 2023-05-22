@@ -1,11 +1,42 @@
 #home {
-    grid-template-rows: [nav-start] 6vh [nav-end head-start] 94vh [head-end side-start] 100vh [side-end main-start] min-content [main-end testimonials-start] min-content [testimonials-end footer-start] 20vh [footer-end];
+    grid-template-rows: [nav-start] 7vh [nav-end head-start] 93vh [head-end side-start] 100vh [side-end main-start] min-content [main-end testimonials-start] min-content [testimonials-end footer-start] 20vh [footer-end];
     
   .nav {
     &__links {
       display: none;
     }
   }
+
+  .nav.open {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-beige;
+    
+
+    & .nav__links {
+      text-transform: uppercase;
+      font-family: $font-primary;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & .nav__item {
+      margin: 2rem;
+      color: $color-red;
+    }
+
+    & .nav__burger {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 1rem;
+    }
+
+  }
+  
 
   .header {
     grid-row: head-start / head-end;
@@ -24,9 +55,8 @@
       color: $color-white;
       padding: 1rem;
       height: 12vh;
-      width: min-content;
+      width: 100vw;
       line-height: 1.2;
-      justify-self: center;
       box-shadow: 1px 2px 4px $color-black;
     }
     &__logo {
@@ -148,10 +178,12 @@
   }
 }
 
-@media only screen and (min-width: $bp-tabport) {
+@media only screen and (min-width: $bp-tabland) {
  #home {
   grid-template-rows: [head-start] 100vh [head-end main-start] min-content [main-end testimonials-start] min-content [testimonials-end footer-start] 20vh [footer-end];
   .nav {
+    grid-column: col-start 6 / col-end 8;
+    grid-row: 1 / 2;
     &__links {
       display: flex;
     }

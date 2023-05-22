@@ -1,4 +1,21 @@
 .footer {
   grid-row: 6 / 7;
   grid-column: full-start / full-end;
+  display: flex;
+
+}
+
+.address {
+  margin: 2rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  color: $color-red;
+
+  &__item {
+    margin: 1rem;
+  }
 }

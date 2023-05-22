@@ -238,6 +238,21 @@ ul {
 .footer {
   grid-row: 6/7;
   grid-column: full-start/full-end;
+  display: flex;
+}
+
+.address {
+  margin: 2rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  color: #680301;
+}
+.social-links__item {
+  margin: 1rem;
 }
 
 .container {
@@ -270,17 +285,17 @@ ul {
   display: none;
 }
 .nav__burger {
-  justify-self: end;
-  align-self: center;
-  margin: 0 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
   width: 2.5rem;
-  display: inline-block;
 }
 .nav__burger-bar {
   display: block;
   height: 4px;
   width: 100%;
-  background: #302f2f;
+  background: #680301;
   border-radius: 5px;
   margin: 0.4rem 0;
 }
@@ -291,10 +306,34 @@ ul {
 }
 
 #home {
-  grid-template-rows: [nav-start] 6vh [nav-end head-start] 94vh [head-end side-start] 100vh [side-end main-start] min-content [main-end testimonials-start] min-content [testimonials-end footer-start] 20vh [footer-end];
+  grid-template-rows: [nav-start] 7vh [nav-end head-start] 93vh [head-end side-start] 100vh [side-end main-start] min-content [main-end testimonials-start] min-content [testimonials-end footer-start] 20vh [footer-end];
 }
 #home .nav__links {
   display: none;
+}
+#home .nav.open {
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffb043;
+}
+#home .nav.open .nav__links {
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#home .nav.open .nav__item {
+  margin: 2rem;
+  color: #680301;
+}
+#home .nav.open .nav__burger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
 }
 #home .header {
   grid-row: head-start/head-end;
@@ -313,10 +352,8 @@ ul {
   color: #f8f8f8;
   padding: 1rem;
   height: 12vh;
-  width: -moz-min-content;
-  width: min-content;
+  width: 100vw;
   line-height: 1.2;
-  justify-self: center;
   box-shadow: 1px 2px 4px #302f2f;
 }
 #home .header__logo {
@@ -424,9 +461,13 @@ ul {
   background-color: #ffb043;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1080px) {
   #home {
     grid-template-rows: [head-start] 100vh [head-end main-start] min-content [main-end testimonials-start] min-content [testimonials-end footer-start] 20vh [footer-end];
+  }
+  #home .nav {
+    grid-column: col-start 6/col-end 8;
+    grid-row: 1/2;
   }
   #home .nav__links {
     display: flex;

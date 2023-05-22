@@ -25,24 +25,25 @@
 	
 	<header class="header">
 		<img class="header__logo" src="assets/img/rwb-logo.png" alt="real world ballroom logo" class="header__logo">
-			<p class="header__announcement heading-5">Please Note: effective 4/1/23 our new address is 690 Jonestown Rd, Winston Salem, NC 27103 (next to Tinderbox Fitness)</p>
+		<p class="header__announcement heading-5">Please Note: effective 4/1/23 our new address is 690 Jonestown Rd, Winston Salem, NC 27103 (next to Tinderbox Fitness)</p>
 		<h1 class="header__heading heading-1">dancing for&nbsp;&nbsp;&&nbsp;&nbsp;by real people</h1>
 		<a href="#sidebar" class="btn header__cta">Discover More</a>
 	</header>
-	<nav class="nav">
-		<input type="checkbox" class="nav__btn" id="nav__btn">
-		<label for="nav__btn" class="nav__burger">
+	<nav class="nav" id="nav">
+		<div id="nav__btn" class="nav__burger">
 			<span class="nav__burger-bar"></span>
 			<span class="nav__burger-bar"></span>
 			<span class="nav__burger-bar"></span>
-		</label>
+		</div>
 		<ul class="nav__links">
-			<li class="nav__item">home</li>
-			<li class="nav__item">about</li>
-			<li class="nav__item">services</li>
-			<li class="nav__item">events</li>
-			<li class="nav__item">faq</li>
-			<li class="nav__item">blog</li>
+			<li class="nav__item"><a class="nav__link" href="index.html">home</a></li>
+			<li class="nav__item"><a class="nav__link" href="about.html">about</a></li>
+			<li class="nav__item"><a class="nav__link" href="services.html">services</a></li>
+			<li class="nav__item"><a class="nav__link" href="events.html">events</a></li>
+			<li class="nav__item"><a class="nav__link" href="contact.html">contact</a></li>
+			<li class="nav__item"><a class="nav__link" href="faq.html">faq</a></li>
+
+			<li class="nav__item"><a class="nav__link" href="blog.html"></a>blog</a></li>
 		</ul>
 	</nav>
 	<dialog class="signup-modal" id="signup-modal">
@@ -72,33 +73,43 @@
 	<section id="testimonials" class="testimonials">
 		<h2 class="testimonials__heading centered heading-2">A word from our happy clients:</h2>
 		<div class="card card1">
-			<img src="assets/img/patty.png" alt="patty and maryann" class="card__img">
+			<img src="assets/img/patty.png" alt="Patty and maryann" class="card__img">
 			<blockquote class="card__text">
 				I have danced with MaryAnn for several years. She is a gem both personally and professionally so if you want to have enjoyment while learning to dance, she is the perfect instructor.
 			</blockquote>
-			<cite>-Patty Gibbs</cite>
+			<cite>- Patty Gibbs</cite>
 		</div>
 		<div class="card card2">
-			<img src="assets/img/kristin.png" alt="patty and maryann" class="card__img">
+			<img src="assets/img/kristin.png" alt="Kristin and husband" class="card__img">
 			<blockquote class="card__text">
 				MaryAnn is a wonderful teacher! We had a blast learning the Waltz, Rumba, and Merengue. My husband and I will definitely be signing up for ongoing lessons. MaryAnn helped us make a lot of progress in a short period of time. Highly recommend!
 			</blockquote>
-			<cite>-Kristin M.</cite>
+			<cite>- Kristin M.</cite>
 		</div>
 		<div class="card card3">
-			<img src="assets/img/jess.png" alt="patty and maryann" class="card__img">
+			<img src="assets/img/jess.png" alt="Jessica and maryann" class="card__img">
 			<blockquote class="card__text">
 				MaryAnn is a blast to dance with! I had the pleasure of learning from her as an instructor and ultimately working beside her as a colleague. She is kind, considerate, warm, and thoughtful. And on the dance floor she is spunky as all get-out! Try her services. Her style, creativity, and fun are all on point!"
 			</blockquote>
-			<cite>-Jessica McKinney</cite>
+			<cite>- Jessica McKinney</cite>
 		</div>
 	</section>
 	<footer class="footer">
-		footer
+		<div class="address">
+			<p><strong>Real World Ballroom</strong></p>
+			<p>690 Jonestown Road</p>
+			<p>Winston-Salem, NC 27103</p>
+			<p>(next to Tinderbox fitness)</p>
+		</div>
+		<div class="social-links">
+			<i class="social-links__item bi bi-facebook"></i>
+			<i class="social-links__item bi bi-instagram"></i>
+			<i class="social-links__item bi bi-google"></i>
+		</div>
 	</footer>
 
 
 
-	<script src="assets/js/app.js"></script>
+	<script src="src/js/app.js"></script>
 </body>
 </html>
