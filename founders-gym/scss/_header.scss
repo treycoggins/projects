@@ -1,0 +1,39 @@
+.home-link {
+    font-size: .8rem;
+    color: $color-yellow;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 .6rem;
+    text-decoration: none;
+    align-self: flex-end;
+}
+
+.header {
+    grid-row: header-start / header-end;
+
+
+    &__banner {
+        background-color: $color-purple;
+        display: flex;
+        flex-direction: column;
+
+        @media only screen and (min-width: $bp-tabland) {
+            grid-column: 1 / -1;
+        }
+        
+        
+        &__text {
+            font-family: $font-primary;
+            color: $color-yellow;
+            font-size: 2rem;
+            text-align: center;
+            padding: .5rem;
+
+            &--bold {
+                font-weight: 700;
+            }
+        }
+
+    }
+}

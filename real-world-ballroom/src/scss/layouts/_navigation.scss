@@ -1,0 +1,32 @@
+.nav {
+  grid-row: 1 / 2;
+  grid-column: full-start / full-end;
+  grid-row: nav-start / nav-end;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  background-color: $color-beige;
+
+  &__links {
+    display: none;
+  }
+
+  &__btn {
+    display: none;
+  }
+  &__burger {
+    justify-self: end;
+    align-self: center;
+    margin: 0 1rem;
+    width: 2.5rem;
+    display: inline-block;
+    
+    &-bar {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background: $color-black;
+      border-radius: 5px;
+      margin: .4rem 0;
+    }
+  }
+}

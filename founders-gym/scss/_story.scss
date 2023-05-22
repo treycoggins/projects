@@ -1,0 +1,12 @@
+.story {
+    grid-row: story-start / story-end;
+    margin-top: 4rem;
+
+    &__text {
+        font-size: min(20vw, 1.6rem);
+        margin: 2rem;
+        color: $color-gray;
+    }
+
+
+}

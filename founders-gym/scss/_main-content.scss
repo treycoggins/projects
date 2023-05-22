@@ -1,0 +1,78 @@
+.main-content {
+    grid-row: main-start / main-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @media only screen and (min-width: $bp-tabland) {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas: "main-content side-nav";
+    }
+
+
+    &__hero-box {
+
+        @media only screen and (min-width: $bp-tabland) {
+            grid-area: main-content;
+        }
+
+        &__text {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 8rem;
+        }
+
+        &__img {
+            background-image: linear-gradient(to right, rgba($color-black, .9), rgba($color-black, .5)), url(../img/hero_sm.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 35vh;
+            width: 100vw;
+            box-shadow: inset -10px -30px 10px 10px $color-black;
+            
+
+            @media only screen and (min-width: $bp-phone) {
+                height: 45vh;
+                width: 75vw;
+            }
+            @media only screen and (min-width: $bp-tabland) {
+                height: 40vh;
+            }
+            @media only screen and (min-width: $bp-laptop) {
+                height: 55vh;
+            }
+        }
+    }
+
+    &__heading {
+        text-align: left;
+        margin-left: 8rem;
+        text-transform: uppercase;
+        font-size: min(600px, 2.4rem);
+
+    }
+
+    &__awards {
+        display: flex;
+        justify-content: space-evenly;
+
+        &__img-bbb {
+            width: 10rem;
+            height: auto;
+            align-self: flex-end;
+        }
+
+        &__img-bga {
+            width: 10rem;
+            height: 8rem;
+            align-self: flex-end;
+        }
+
+        @media only screen and (min-width: $bp-tabland) {
+            grid-area: side-nav;
+
+        }
+    }
+}
+

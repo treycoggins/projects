@@ -1,0 +1,10 @@
+.footer {
+    grid-row: footer-start / footer-end;
+    grid-column: 1 / -1;
+    background-color: inherit;
+    
+    &__text {
+        font-size: 2rem;
+        text-align: center;
+    }
+}

@@ -1,0 +1,13 @@
+.btn {
+  background-color: $color-beige;
+  border-radius: 20rem;
+  padding: 1rem 2rem;
+  border: none;
+  color: $color-black;
+  font-size: 2rem;
+  font-family: $font-primary;
+  box-shadow: 1px 4px 0px $color-black;
+  height: min-content;
+  width: max-content;
+  margin: auto auto;
+}

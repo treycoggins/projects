@@ -1,0 +1,73 @@
+.contact {
+    grid-row: contact-start / contact-end;
+    
+
+    &-heading {
+        text-align: center;
+        
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 60%;
+        margin: auto auto;
+        gap: 1rem;
+
+        @media only screen and (min-width: $bp-tabport) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem 3rem;
+        }
+
+        &__input {
+            background-color: $color-purple;
+            color: $color-yellow;
+            border: none;
+            height: 3rem;
+            padding: 1rem;
+            border-radius: 5px;
+
+           
+
+            &__submit {
+                justify-self: center;
+                background-color: $color-yellow;
+                color: $color-purple;
+                font-size: 2rem;
+                font-weight: 600;
+                border: none;
+                padding: .6rem;
+                border-radius: 5px;;
+                width: 60%;
+                margin: auto auto;
+                margin-top: 2rem;
+                grid-column: 1 / -1;
+            }
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__select {
+            color: $color-yellow;
+            padding: .6rem;
+            background-color: $color-purple;
+            border: none;
+            border-radius: 5px;
+        }
+
+        &__comments {
+            color: $color-yellow;
+            padding: .6rem;
+            background-color: $color-purple;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+        }
+    }
+}
+

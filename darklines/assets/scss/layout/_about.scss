@@ -1,0 +1,73 @@
+.about {
+    background-color: $color-white-dark;
+    grid-row: 2 / 3;
+    grid-column: col-start 1 / full-end;
+    box-shadow: inset 0px -10px 5px 10px $color-black-light;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    &__photos {
+        margin: 5%;
+        grid-column: 1 / span 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        &-img1 {
+            width: 70%;
+            height: auto;
+            border: 10px solid $color-gray-light;
+            border-radius: 5px;
+        }
+
+        &-img2 {
+            width: 60%;
+            height: auto;
+            border: 10px solid $color-gray-light;
+            border-radius: 5px;
+            margin: -10% 30%;
+        }
+    }
+
+    &__story {
+        grid-column: 3 / span 4;
+        margin: 8rem;
+        color: $color-black-light;
+
+        &-title {
+            font-size: 3rem;
+            font-family: $font-accent;
+            color: $color-gray-dark;
+        }
+
+        &-text {
+            color: $color-black-light;
+            margin: 2rem;
+            line-height: 1.5;
+        }
+    }
+
+    .hours {
+        
+        &__title {
+            font-size: 6rem;
+            font-family: $font-accent;
+            color: $color-gray-dark;
+            margin-top: 4rem;
+        }
+        
+        &__list {
+            list-style-type: none;
+            line-height: 2;
+        }
+
+        &__item {
+            margin-right: 2rem;
+            text-indent: 3rem;
+
+        }
+    }
+
+}

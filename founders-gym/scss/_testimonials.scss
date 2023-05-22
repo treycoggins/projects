@@ -1,0 +1,46 @@
+.testimonials {
+   grid-row: testimonials-start / testimonials-end;
+   
+
+   &__heading {
+    width: 70%;
+    margin-left: 4rem;
+   }
+
+   &__box {
+      @media only screen and (min-width: $bp-tabport) {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+      }
+   }
+
+
+   &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 4rem auto;
+   }
+
+   &__text {
+    font-size: min(200px, 2.4rem);
+    color: $color-gray;
+    padding-right: 1rem;
+    max-width: 400px;
+   }
+
+   &__cite {
+    color: $color-gray;
+    align-self: flex-end;
+   }
+
+   &__headshot {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin: 3rem;
+
+   }
+}

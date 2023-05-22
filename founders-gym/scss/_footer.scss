@@ -1,0 +1,23 @@
+.footer {
+    grid-row: footer-start / footer-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: $color-purple;
+    color: $color-gray;
+
+    
+    &__social-icons {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        font-size: 5rem;
+        justify-content: center;
+        margin: 2rem auto;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}

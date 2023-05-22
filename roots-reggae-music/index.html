@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css" rel="stylesheet">
+  </link>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Scripts -->
+  <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.min.js"></script>
+
+  <title>Good Vibes Summer Tour - Asheville, NC</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<!-- Body -->
+
+<body>
+  <!-- Load Screen & Spinner -->
+  <div id="overlay" class="overlay d-flex justify-content-center align-items-center">
+    <div class="spinner spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="purchase-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="img/logo.png" class="rounded me-2" alt="Roots Reggae Music logo" style="width: 20%;">
+        <strong class="me-auto fs-1 m-auto">Success!</strong>
+        <small class="fs-3">Just now</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body fs-3 text-center">
+        Tickets have been added to your cart!
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="navbar navbar-expand-xl navbar-dark display-6" id="navbar">
+      <a href="#" class="navbar-brand mx-5">
+        <img class="navbar__brand" src="img/logo.png" alt="Roots reggae logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+        <!-- Scroll Spy List -->
+        <ul class="nav navbar-nav m-5 mb-2 mb-lg-0 gap-5 nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#lineup">Bands</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#ticket">Ticket Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#book">Book a Ticket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#faq">FAQ</a>
+          </li>
+          <li>
+            <button type="button" class="btn btn-primary position-relative rounded-4 me-5">
+              <i class="fa fas fa-shopping-cart text-white me-2 fs-2"></i>
+              <span id="cart-total"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-4">
+                0
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Modal to display when clicking the CTA -->
+  <div id="purchase-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title display-4 text-center">Purchase tickets</h5>
+          <button id="modal-close" type="button" class="modal-nopurchase btn-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body fs-2">
+          <p>How many tickets would you like to purchase?</p>
+          <select class="modal-select" name="purchase" id="ticket-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button id="modal-cancel" type="button" class="modal-nopurchase btn fs-3"
+            data-bs-dismiss="modal">Cancel</button>
+          <button id="modal-purchase" type="button" class="modal-purchase btn fs-3"
+            data-bs-dismiss="modal">Add to
+            Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content section -->
+ <div class="position-relative" data-bs-target="#navbar" data-bs-spy="scroll" tabindex="0" data-bs-offset="0">
+    <main class="main" id="home">
+      <section class="hero d-flex flex-column justify-content-evenly">
+  
+        <div class="row">
+          <div class="hero__header offset-1 col-10 col-sm-7 display-1">
+            From sun up to sun down, we have the best party in town.
+          </div>
+        </div>
+  
+        <div class="row m-0">
+          <div class="col-11 col-sm-10 col-md-8 col-lg-7 offset-1 offset-sm-2 offset-md-4 offset-lg-5">
+            <p class="display-3 display-lg-1 text-light fw-bold">
+              Wednesday, June 24
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-5 offset-1 offset-sm-2 offset-md-5">
+              <p class="hero__header__sub col-4 fs-2 fw-bolder bg-danger rounded-5 text-white my-4 px-3 py-1">
+                <i class="fa fa-map-marker fa-fw text-light"></i>
+                Salvage Station&nbsp;<span class="d-none d-lg-inline">&nbsp;|&nbsp;468 Riverside
+                  Dr.</span>&nbsp;|&nbsp;Asheville, NC
+              </p>
+            </div>
+          </div>
+          <div class="row m-0">
+            <div class="col offset-1 offset-sm-2 offset-md-5">
+              <a href="#book" role="button" class="btn btn__book fs-1 fw-bold btn-info text-light py-2 rounded-5"
+                data-bs-toggle="modal" data-bs-target="#purchase-modal">
+                Buy Tickets Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section class="container-fluid container-md">
+        <div class="row mt-md-5">
+          <div class="col-md-5 align-self-baseline text-capitalize display-1 m-0 m-sm-4 text-sm-center text-md-start">
+            get ready for good feels and great times!
+          </div>
+          <p class="col-md-6 col-lg-6 align-self-baseline text-sm-center text-md-end fw-light mx-0 px-2 fs-3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo modi,
+            voluptatibus ipsam placeat maiores, atque porro quasi dolor aliquam
+            excepturi debitis, cum sunt ut reprehenderit explicabo iusto ex
+            perferendis dicta soluta? Odio quo eius, rerum modi architecto
+            perferendis ducimus obcaecatid doloribus, cupiditate deleniti cum
+          </p>
+        </div>
+      </section>
+    </main>
+ </div>
+
+  <!-- Gallery section with carousel component -->
+  <section class="container-fluid container-md" id="gallery">
+    <div class="display-3 mt-5 m-5 fw-lighter text-uppercase">Gallery</div>
+
+    <div id="gallery-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="6000">
+          <img src="img/crowd1.jpg" class="d-block w-100" alt="girls in the concert lawn">
+        </div>
+        <div class="carousel-item" data-bs-interval="6000">
+          <img src="img/crowd2.jpg" class="d-block w-100" alt="view of the crowd from the stage">
+        </div>
+        <div class="carousel-item" data-bs-interval="6000">
+          <img src="img/crowd3.jpg" class="d-block w-100" alt="view of the stage from the crowd">
+        </div>
+      </div>
+      <button class="carousel-control-prev carousel-dark  carousel-arrow-left" type="button"
+        data-bs-target="#gallery-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next carousel-dark carousel-arrow-right" type="button"
+        data-bs-target="#gallery-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- The line-up section displaying cards and accordion components -->
+  <section class="container-fluid container-md" id="lineup">
+    <div class="display-3 mt-5 m-5 fw-lighter text-uppercase">the line-up</div>
+    <div class="row g-5 m-0 m-md-3">
+      <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+        <div class="card">
+          <img src="img/rebelution.jpg" class="card-img-top" alt="photo of Rebelution">
+          <div class="card-body">
+            <div class="accordion accordion-flush" id="accordionRebelution">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <h5 class="card-title">Rebelution (Headliner)</h5>
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p class="card-text">Rebelution was formed in the college town of Isla Vista, California, in 2004.
+                      The five original band members were Eric Rachmany, Matt Velasquez, Rory Carey, Marley D. Williams,
+                      and Wesley
+                      Finley, who were all University of California, Santa Barbara students.<br>
+                      <a href="https://en.wikipedia.org/wiki/Rebelution_(band)" target="_blank" class="card-link">more
+                        info</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsePhotoCred1" aria-expanded="false"
+                    aria-controls="flush-collapsePhotoCred1">
+                    Photo Credit
+                  </button>
+                </h2>
+                <div id="flush-collapsePhotoCred1" class="accordion-collapse collapse">
+                  <div class="accordion-body">Photo By Abby Gillardi -
+                    https://www.flickr.com/photos/abbers13/20476544980, CC BY 2.0,
+                    https://commons.wikimedia.org/w/index.php?curid=65450107</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+        <div class="card">
+          <img src="img/iration.jpg" class="card-img-top" alt="photo of Iration">
+          <div class="card-body">
+            <div class="accordion accordion-flush" id="accordionIration">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    <h5 class="card-title">Iration</h5>
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p class="card-text">Iration is a reggae/pop group from Santa Barbara, California. All members
+                      originally hail from Hawaii. They play a mix of reggae, dub, pop, and rock. The group is one of
+                      the leading bands in the genre of sunshine reggae.<br>
+                      <a href="https://en.wikipedia.org/wiki/Iration" target="_blank" class="card-link">more info</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsePhotoCred2" aria-expanded="false"
+                    aria-controls="flush-collapsePhotoCred2">
+                    Photo Credit
+                  </button>
+                </h2>
+                <div id="flush-collapsePhotoCred2" class="accordion-collapse collapse">
+                  <div class="accordion-body">Photo By Basilisk4u - Own work, CC0,
+                    https://commons.wikimedia.org/w/index.php?curid=50263477
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+        <div class="card">
+          <img src="img/expendables.jpg" class="card-img-top" alt="photo of The Expendables">
+          <div class="card-body">
+            <div class="accordion accordion-flush" id="accordionExpendables">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <h5 class="card-title">The Expendables</h5>
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p class="card-text">The Expendables are an American reggae rock band from Santa Cruz, California.
+                      The
+                      Expendables was formed in 1997 by elementary school buddies Geoff Weers on vocals and guitar, Raul
+                      Bianchi
+                      on lead guitar and Adam Patterson on drums.<br>
+                      <a href="https://en.wikipedia.org/wiki/The_Expendables_(American_band)" target="_blank"
+                        card-link">more info</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsePhotoCred3" aria-expanded="false"
+                    aria-controls="flush-collapsePhotoCred3">
+                    Photo Credit
+                  </button>
+                </h2>
+                <div id="flush-collapsePhotoCred3" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    Photo By Ralf Lotys (Sicherlich), CC BY 3.0,
+                    https://commons.wikimedia.org/w/index.php?curid=27777990
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+        <div class="card">
+          <img src="img/passafire.jpg" class="card-img-top" alt="photo of Passafire">
+          <div class="card-body">
+            <div class="accordion accordion-flush" id="accordionPassafire">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    <h5 class="card-title">Passafire</h5>
+                  </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p class="card-text">Passafire is a reggae rock band based in Savannah, Georgia. Passafire was
+                      founded
+                      in
+                      2003 by Savannah, Georgia natives Ted Bowne on vocals/guitar and Nick Kubley on drums who at the
+                      time were
+                      students attending Savannah College of Art and Design (SCAD).</p>
+                    <a href="https://en.wikipedia.org/wiki/Passafire" target="_blank" class="card-link">more info</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsePhotoCred4" aria-expanded="false"
+                    aria-controls="flush-collapsePhotoCred4">
+                    Photo Credit
+                  </button>
+                </h2>
+                <div id="flush-collapsePhotoCred4" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    Photo By Om3g4 - Own work, FAL,
+                    https://commons.wikimedia.org/w/index.php?curid=15223726
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+        <div class="card">
+          <img src="img/slightlystoopid.jpg" class="card-img-top" alt="photo of Passafire">
+          <div class="card-body">
+            <div class="accordion accordion-flush" id="accordionSlightlyStoopid">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    <h5 class="card-title">Slightly Stoopid</h5>
+                  </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p class="card-text">Slightly Stoopid is an American band based in the Ocean Beach neighborhood of
+                      San
+                      Diego, California, who describe their music as "a fusion of folk, rock, reggae and blues with
+                      hip-hop,
+                      funk, metal and punk." As a band, they have released thirteen albums (four live), with their ninth
+                      studio
+                      album entitled Everyday Life, Everyday People on July 13, 2018.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsePhotoCred5" aria-expanded="false"
+                    aria-controls="flush-collapsePhotoCred5">
+                    Photo Credit
+                  </button>
+                </h2>
+                <div id="flush-collapsePhotoCred5" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    Photo By Clintus - Flickr: Slightly
+                    Stoopid Live!, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=32731745
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+        <div class="card">
+          <img src="img/twiddle.jpg" class="card-img-top" alt="photo of Passafire">
+          <div class="card-body">
+            <div class="accordion accordion-flush" id="accordionTwiddle">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                    <h5 class="card-title">Twiddle</h5>
+                  </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p class="card-text">Twiddle is an American rock band. They are a jam band, and utilize instrumental
+                      improvisation in their live performances. They incorporate influences from a variety of music
+                      genres,
+                      including rock, jazz, bluegrass, reggae, and funk. Twiddle formed at Castleton State College in
+                      Vermont in
+                      2004.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsePhotoCred6" aria-expanded="false"
+                    aria-controls="flush-collapsePhotoCred6">
+                    Photo Credit
+                  </button>
+                </h2>
+                <div id="flush-collapsePhotoCred6" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    Photo By Shannon McGee -
+                    https://www.flickr.com/photos/shan213/25935239151/in/photolist-dUWL8c-7Qc8Jw-FvNU3a-EGgi6y-EGga7h-FvNT2H-CWsf9d,
+                    CC BY-SA 2.0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors section & PopOvers-->
+
+  <section class="container-fluid container-md">
+    <div class="display-3 m-5 fw-lighter text-uppercase">sponsors</div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 align-items-center justify-content-evenly">
+      <div class="col sponsor__img rounded-3 border border-info p-3">
+        <img class="w-100 h-100" src="img/food-sponsor.png" alt="Happy Food: food sponsor">
+        <button class="btn btn-info learn-more text-capitalize text-white" type="button" data-bs-toggle="popover"
+          data-bs-container="body" data-bs-placement="bottom" data-bs-title="Good Eats"
+          data-bs-content="Happy iFood trucks will be on-site with 8 different cuisine options.">learn more</button>
+      </div>
+      <div class="col sponsor__img rounded-3 border border-info p-3">
+        <img class="col w-100 h-100" src="img/official-sponsor.png" alt="MTV: official sponsor">
+        <button class="btn btn-info learn-more text-capitalize text-white" type="button" data-bs-toggle="popover"
+          data-bs-container="body" data-bs-placement="bottom" data-bs-title="MTV"
+          data-bs-content="MTV regularly hosts events at Salvage Station in Asheville, NC">learn more</button>
+      </div>
+      <div class="col sponsor__img rounded-3 border border-info p-3">
+        <img class="col w-100 h-100" src="img/merchandise-sponsor.png" alt="HOLI: merchandise-sponsor">
+        <button class="btn btn-info learn-more text-capitalize text-white" type="button" data-bs-toggle="popover"
+          data-bs-container="body" data-bs-placement="bottom" data-bs-title="HOLI apparel"
+          data-bs-content="The industry's best hemp clothing brought to you buy HOLI apparel.">learn more</button>
+      </div>
+      <div class="col sponsor__img rounded-3 border border-info p-3">
+        <img class="w-100 h-100" src="img/ticketing-partner.png" alt="Flipkart: ticketing sponsor">
+        <button class="btn btn-info learn-more text-capitalize text-white" type="button" data-bs-toggle="popover"
+          data-bs-container="body" data-bs-placement="bottom" data-bs-title="Flipkart"
+          data-bs-content="Flipkart is our partner for online ticket sales.">learn more</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticket options & table section -->
+
+  <section class="container-fluid container-md" id="ticket">
+    <div class="display-3 m-5 fw-lighter text-uppercase">ticket packages</div>
+
+    <div class="row justify-content-center align-items-center gap-5">
+      <div class="col-12 col-sm-4 ticket__card border border-secondary">
+        <h4 class="ticket__card__title py-3 mt-5 m-3">Family</h4>
+        <div class="ticket__card__icon">
+          <img src="img/family.jpg" alt="family">
+        </div>
+        <div class="align-self-end text-center my-4">
+          <a role="button" class="btn buy-now btn-outline-danger text-decoration-none fs-3 fw-bold px-4 py-2 rounded-5">
+            Buy Now
+          </a>
+        </div>
+        <div class="ticket__price">
+          <p class="price">$80</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 ticket__card border border-secondary">
+        <h4 class="ticket__card__title py-3 mt-5 m-3">Reserved</h4>
+        <div class="ticket__card__icon">
+          <img src="img/reserved.png" alt="guarantee">
+        </div>
+        <div class="align-self-end text-center my-4">
+          <a role="button" class="btn buy-now btn-outline-danger text-decoration-none fs-3 fw-bold px-4 py-2 rounded-5">
+            Buy Now
+          </a>
+        </div>
+        <div class="ticket__price">
+          <p>$160</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 ticket__card border border-secondary">
+        <h4 class="ticket__card__title py-3 mt-5 m-3">VIP</h4>
+        <div class="ticket__card__icon">
+          <img src="img/vip.png" alt="vip">
+        </div>
+        <div class="align-self-end text-center my-4">
+          <a role="button" class="btn buy-now btn-outline-danger text-decoration-none fs-3 fw-bold px-4 py-2 rounded-5">
+            Buy Now
+          </a>
+        </div>
+        <div class="ticket__price">
+          <p>$220</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row d-flex justify-content-center">
+      <table class="col-sm-10 col-md-7 col-lg-6 table table-light my-5">
+        <tr>
+          <th class="">&nbsp</th>
+          <th class="text-capitalize text-center table-success">Family package</th>
+          <th class="text-capitalize text-center table-danger">Reserved package</th>
+          <th class="text-capitalize text-center table-warning">VIP package</th>
+        </tr>
+        <tr>
+          <th class="text-capitalize">general admission ticket<span class="text-lowercase">(s)</span></th>
+          <td>
+            <i class="check fa fa-lg fa-check"></i>
+          </td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+        </tr>
+        <tr>
+          <th class="text-capitalize">free parking</th>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+        </tr>
+        <tr>
+          <th class="text-capitalize">food & beverage included</th>
+          <td>&nbsp;</td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+        </tr>
+        <tr>
+          <th class="text-capitalize">pre-show backstage pass</th>
+          <td>&nbsp;</td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+        </tr>
+        <tr>
+          <th class="text-capitalize">artist meet and greet</th>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+        </tr>
+        <tr>
+          <th class="text-capitalize">artist photoshoot</th>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+        </tr>
+        <tr>
+          <th class="text-capitalize">on-stage show pass</th>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><i class="check fa fa-lg fa-check"></i></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Book a ticket section -->
+
+  <section class="container-fluid container-md" id="book">
+    <div class="display-3 mt-5 m-5 fw-lighter text-uppercase">buy a ticket</div>
+
+    <div class="row justify-content-lg-evenly justify-content-md-center">
+      <div class="col-md-4 d-none flex-md-column d-lg-flex">
+        <img class="book__image border border-5 border-danger-subtle" src="img/tree2.jpg"
+          alt="photo of a palm tree in the evening">
+        <figure class="col-sm-3 w-100 mt-3 mb-5">
+          <blockquote class="blockquote w-100 text-danger-emphasis">
+            One good thing about music - when it hits you, you feel no pain.
+          </blockquote>
+          <figcaption class="blockquote-footer quote-footer text-danger-emphasis">
+            Bob Marley
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Book a ticket form & ToolTips -->
+      <form class="col-12 col-md-4 needs-validation" novalidate>
+        <div class="row flex-column flex-lg-row">
+          <div class="col-10">
+            <div class="" data-bs-toggle="tooltip" data-bs-title="This field is required." data-bs-placement="left">
+              <label class="form-label" for="fname">First name:</label><br>
+              <input class="form-control" type="text" id="fname" name="fname" placeholder="First name" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="" data-bs-toggle="tooltip" data-bs-title="This field is required." data-bs-placement="left">
+              <label class="form-label" for="lname">Last name:</label><br>
+              <input class="form-control" type="text" id="lname" name="lname" placeholder="Last name" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="" data-bs-toggle="tooltip" data-bs-title="This field is required." data-bs-placement="left">
+              <label class="form-label" for="phone">Phone number:</label><br>
+              <input class="form-control" type="text" id="phone" name="phone" placeholder="Phone number" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+          </div>
+          <div class="col-10">
+            <div class="" data-bs-toggle="tooltip" data-bs-title="This field is required." data-bs-placement="left">
+              <label class="form-label has-validation" for="email">Email:</label><br>
+              <input class="form-control" type="email" id="email" name="email" placeholder="yourname@example.com" required><br>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="">
+              <label class="form-label" for="ticket-type">Choose ticket type:
+              </label>
+            </div>
+            <div class="form-label">
+              <select class="form-select">
+                <option value="vip" class="">Vip</option>
+                <option value="family" class="">Family</option>
+                <option value="reserved" class="">Reserved</option>
+              </select>
+            </div>
+            <div class="">
+              <button type="submit" id="form-submit" class="btn btn-danger fw-bolder m-2">Submit</button>
+              <button type="reset" id="form-reset" class="btn btn-secondary fw-bolder m-2">Clear Form</button>
+            </div>
+            <p class="w-100 text-center">
+              Please fill out this form, and we will send your digital ticket to
+              your email address.
+            </p>
+            <div id="form-alert" data-shown="false"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ section -->
+  <section class="container-fluid container-md" id="faq">
+    <div class="display-3 mt-5 m-5 fw-lighter text-uppercase">FAQ</div>
+    <div class="row d-flex flex-column flex-md-row">
+      <div class="col-10 col-md-6">
+        <div class="dropdown">
+          <button class="btn btn-secondary text-light fs-3" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            <p class="m-3">
+              Please click here and select one of the items below for more information
+            </p>
+          </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <a class="dropdown-link">Health & Safety</a>
+            </li>
+            <li class="dropdown-item">
+              <a class="dropdown-link">Tickets</a>
+            </li>
+            <li class="dropdown-item">
+              <a class="dropdown-link">Security and Bag Checks</a>
+            </li>
+            <li class="dropdown-item">
+              <a class="dropdown-link">Acceptable/Prohibited Items</a>
+            </li>
+            <li class="dropdown-item">
+              <a class="dropdown-link">Alcoholic Beverages & Food Service</a>
+            </li>
+            <li class="dropdown-item">
+              <a class="dropdown-link">Smoking Policy</a>
+            </li>
+            <li class="dropdown-item">
+              <a class="dropdown-link">Pets & Service Animals</a>
+            </li>
+            <li class="dropdown-item">
+              <a class="dropdown-link">Parking & Shuttles</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-md-5 offset-md-1 my-5">
+        <div id="faq-info"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer section -->
+  <footer class="footer">
+    <div class="d-flex align-content-center justify-content-center bg-danger-subtle">
+      <p>
+        This website was created by SurfTurkey &copy;2023.
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

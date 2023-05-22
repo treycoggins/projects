@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/fontawesome/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&family=Graduate&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="assets/js/app.js"></script>
+    <title>Founder's Gym</title>
+</head>
+<style>
+    .home-link {
+        font-size: 1.4rem;
+        color: gold;
+        margin-right: 1rem;
+        position: absolute;
+        top: 16rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>
+<body class="container">
+
+    <!-- HEADER / NAVBAR -->
+
+    <header class="header">
+        <a href="../../projects.html" class="home-link">Back to SurfTurkey.net</a> 
+        <div class="header__banner">
+            <p class="header__banner__text">Seasonal Membership Discounts!</p>
+            <p class="header__banner__text">Available Until January 1, 2023</p>
+            <p class="header__banner__text header__banner__text--bold">Join Today!</p>
+            
+        </div>
+        <nav class="navbar">
+            <img class="navbar__logo" src="img/logo.png" alt="">
+            <div class="navbar__burger" onclick="openNav()">
+                <div class="navbar__burger__slice"></div>
+            </div>
+            <ul id="menu-list" class="navbar__menu">
+                <div id="closeBtn" class="navbar__menu__close-btn"><a href="javascript:void(0)" onclick="closeNav()">&times;</a></div>
+                <li class="navbar__menu__item"><a class="navbar__menu__link" href="#story">our story</a></li>
+                <li class="navbar__menu__item"><a class="navbar__menu__link" href="#contactus">contact us</ah></li>
+                <li class="navbar__menu__item"><a class="navbar__menu__link" href="#locations">locations</a></li>
+                <li class="navbar__menu__item"><a class="navbar__menu__link" href="#pricing">pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN-CONTENT -->
+
+    <main class="main-content">
+        <div class="main-content__hero-box">
+            <h1 class="main-content__hero-box__text">founder's gym</h1>
+            <div class="main-content__hero-box__img"></div>
+            <h2 class="main-content__heading">
+                <span class="accent-font">find</span> yourself <span class="accent-font">a place</span> at founder's today!
+            </h2>    
+        </div>
+        
+        <div class="main-content__awards">
+            <img class="main-content__awards__img-bbb" src="img/bbb.png" alt="Better Business Bureau logo">
+            
+            <img src="img/BestGymAwardsLogo.png" alt="best gym award seal" class="main-content__awards__img-bga">
+        </div>
+        <div class="scroll-btn">
+            <a href="#story" class="scroll-btn__i"><i class="fa-solid fa-angle-down arrows"></i></a>
+        </div>
+    </main>
+    
+    <!-- STORY -->
+
+    <section class="story" id="story">
+        <h2 class="story__heading heading-primary">
+            Our story began with a passion for helping others...
+        </h2>
+        <p class="story__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eius nisi voluptate laborum ipsum illo quia laudantium? Ad, quo? Eveniet tempora a blanditiis fugit sed unde sunt deleniti cumque repellat necessitatibus dicta, illum in nihil rem porro consequatur quod quaerat. 
+        </p>
+        <p class="story__text">    
+            Nisi nam laboriosam accusantium ad repellat, aliquam blanditiis eius a at fuga delectus. Rerum, nam voluptas numquam quae iste a temporibus provident quibusdam nostrum quas explicabo veritatis dolores ullam fugit architecto suscipit.
+        </p>
+        <p class="story__text">    
+            Nisi nam laboriosam accusantium ad repellat, aliquam blanditiis eius a at fuga delectus. Rerum, nam voluptas numquam quae iste a temporibus provident architecto suscipit velit assumenda cupiditate quasi ex, vero sunt eaque similique! Obcaecati omnis eius provident.
+        </p>
+    </section>
+
+    <!-- CTA -->
+
+
+    <section class="cta">
+        <h2 class="cta__heading heading-primary"> ...so we're making a place just for you!</h2>
+        <a href="#pricing" class="">
+            <button class="btn cta__btn btn--yellow btn--animated">Join Now!</button>
+        </a>
+    </section>
+
+    
+    <!-- TESTIMONIALS -->
+
+    <section class="testimonials">
+        <div class="testimonials__heading heading-primary">A word from our happy customers...</div>
+        <div class="testimonials__box">
+            <div class="testimonials__item">
+                <img src="img/headshot1.jpg" alt="Headshot of Cindy McDowell" class="testimonials__headshot">
+                <blockquote class="testimonials__text">"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem quo labore neque, quia eius aliquid sunt. Adipisci, laudantium laboriosam? Iure rerum veniam reiciendis."</blockquote>
+                <cite class="testimonials__cite">&#8212; Cindy McDowell</cite>
+            </div>
+            <div class="testimonials__item">
+                <img src="img/headshot2.jpg" alt="Headshot of James Forte" class="testimonials__headshot">
+                <blockquote class="testimonials__text">"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem quo labore neque, quia eius aliquid sunt. Adipisci, laudantium laboriosam?"</blockquote>
+                <cite class="testimonials__cite">&#8212; James Forte</cite>        
+            </div>
+            <div class="testimonials__item">
+                <img src="img/headshot3.jpg" alt="Headshot of Mindy Patagon" class="testimonials__headshot">
+                <blockquote class="testimonials__text">"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem quo labore neque, quia eius aliquid sunt. Iure rerum veniam reiciendis."</blockquote>
+                <cite class="testimonials__cite">&#8212; Mindy Patagon</cite>
+    
+            </div>
+            <div class="testimonials__item">
+                <img src="img/headshot4.jpg" alt="Headshot of Emerson Vakhala" class="testimonials__headshot">
+                <blockquote class="testimonials__text">"Lorem ipsum elit quo quos modi non inventore! Voluptas corporis fugit sunt asperiores unde repudiandae. Adipisci, laudantium laboriosam? Iure rerum veniam reiciendis."</blockquote>
+                <cite class="testimonials__cite">&#8212; Emerson Vakhala</cite>
+            </div>
+        </div clas=>
+    </section>
+
+    <!-- CONTACT US -->
+    <section class="contact">
+        <h2 class="contact-heading heading-primary">Contact Us</h2>
+        <form action="#" method="post" class="contact-form">
+
+            <div class="contact-form__item">
+                <label for="first-name">First name</label>
+                <input id="first-name" type="text" class="contact-form__input">
+            </div>
+           
+            <div class="contact-form__item">
+                <label for="last-name">Last Name</label>
+                <input id="last-name" type="text" class="contact-form__input">
+            </div>
+            
+            <div class="contact-form__item">
+                <label for="email">Email Address</label>
+                <input id="email" type="email" class="contact-form__input">
+            </div>
+            
+            <div class="contact-form__item">
+                <label for="phone">Phone Number</label>
+                <input id="phone" type="phone" class="contact-form__input">
+            </div>
+           
+            <div class="contact-form__item">
+                <label for="age">Age</label>
+                <input id="age" type="text" class="contact-form__input">
+            </div>
+
+            <div class="contact-form__item">
+                <label for="gender">Gender</label>
+                <select class="contact-form__select" id="gender" name="gender">
+                    <option value="" selected></option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="non-binary">Non-Binary</option>
+                </select>
+            </div>
+
+            <div class="contact-form__item">
+                <label for="comments">Comments</label>
+                <textarea class="contact-form__comments" name="comments" id="comments" cols="30" rows="10">Tell us more...</textarea>
+            </div>
+            
+            <input class="contact-form__input__submit" type="submit" value="Submit Here">
+        </form>
+    </section>
+
+
+    <!-- LOCATIONS -->
+    
+    <section class="locations" id="locations">
+        <div class="locations__heading heading-primary">locations</div>
+        <div class="locations__item">
+            <img src="img/winston.jpg" alt="Winston Salem skyline" class="locations__photo">
+            <h3 class="locations__text">Winston Salem, NC</h3>
+        </div>
+        <div class="locations__item">
+            <img src="img/charlotte.jpg" alt="Charlotte skyline" class="locations__photo">
+            <h3 class="locations__text">Charlotte, NC</h3>
+        </div>
+        <div class="locations__item">
+            <img src="img/greensboro.jpg" alt="Greenboro skyline" class="locations__photo">
+            <h3 class="locations__text">Greensboro, NC</h3>
+        </div>
+        <div class="locations__item">
+            <img src="img/raleigh.jpg" alt="Raleigh skyline" class="locations__photo">
+            <h3 class="locations__text">Raleigh, NC</h3>
+        </div>
+    </section>
+
+    
+    <!-- PRICING -->
+    
+    <section class="pricing" id="pricing">
+        <h3 class="pricing__heading heading-primary">Plans & Pricing</h3>
+        
+        
+        <div class="pricing__cards">
+            <div class="pricing__card">
+                <div class="pricing__card__item">
+                    <h3 class="pricing__card__heading">Gold</h3>
+                    <div class="pricing__card__heading__border"></div>      
+                    <ul class="pricing__card__list">
+                        <li class="pricing__card__text">24 hour gym access</li>
+                        <li class="pricing__card__text">Weekly classes</li>
+                        <li class="pricing__card__text">Steam room access</li>
+                    </ul>
+                    <ul>
+                        <li class="pricing__card__price">$30 / month</li>
+                        <li class="pricing__card__price">$320 / year</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="pricing__card">
+                <div class="pricing__card__item">
+                    <h3 class="pricing__card__heading">Platinum</h3>
+                    <div class="pricing__card__heading__border"></div>      
+                    <ul class="pricing__card__list">
+                        <li class="pricing__card__text">Gold benefits</li>
+                        <li class="pricing__card__text">Hydro Massages</li>
+                        <li class="pricing__card__text">Free Weekly Guest passes</li>
+                    </ul>
+                    <ul>
+                        <li class="pricing__card__price">$50 / month</li>
+                        <li class="pricing__card__price">$550 / year</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="pricing__card">
+                <div class="pricing__card__item">
+                    <h3 class="pricing__card__heading">Diamond</h3>
+                    <div class="pricing__card__heading__border"></div>      
+                    <ul class="pricing__card__list">
+                        <li class="pricing__card__text">Platinum benefits</li>
+                        <li class="pricing__card__text">Personal exercise plan</li>
+                        <li class="pricing__card__text">Free on-site child care</li>
+                    </ul>
+                    <ul>
+                        <li class="pricing__card__price">$70 / month</li>
+                        <li class="pricing__card__price">$800 / year</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer class="footer">
+        <div class="footer__social-icons">
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-square-twitter"></i>
+        </div>
+        <p class="footer__text">This website was designed and developed by SurfTurkey.net &copy;2022</p>
+    </footer>
+</body>
+</html>

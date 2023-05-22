@@ -1,0 +1,102 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    position: relative;
+
+    
+
+
+    &__logo {
+        width: 10rem;
+        height: auto;
+        margin: 1rem 0;
+        
+    }
+
+    &__menu {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 30vh;
+        transform: translate(10px, -10px);
+        color: $color-yellow;
+        background-color: $color-purple;
+        transition: .5s;
+
+
+
+        &__close-btn {
+            font-size: 4rem;
+            color: $color-yellow;
+            text-decoration: none;
+            position: absolute;
+            top: -30px;
+            left: 0;
+            padding: 1rem;
+            
+        }
+
+        &__item {
+            list-style-type: none;
+            font-size: 3.5rem;
+            padding: 4rem 0;
+            text-align: center;        
+            
+        }
+
+        
+
+        &__link {
+            color: $color-yellow;
+            text-decoration: none;
+            }
+            
+
+            &:hover {
+                color: $color-black;
+                cursor: pointer
+            }
+        }
+
+    &__burger {
+        width: 4rem;
+        height: 4rem;
+        background-color: transparent;
+        border-radius: 3px;
+        position: relative;
+        cursor: pointer;
+        align-self: flex-start;
+        margin: 1rem;
+
+        &__slice {
+            width: 3rem;
+            height: .3rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-gray;
+            border-radius: 3px;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                width: 3rem;
+                height: .3rem;
+                border-radius: 3px;
+                background-color: $color-gray;
+                }
+
+            &::before { transform: translateY(-1rem); }
+            &::after { transform: translateY(1rem); }
+
+        }   
+     
+    }
+}

@@ -1,0 +1,50 @@
+.atmosphere {
+    grid-row: atmosphere-start / atmosphere-end;
+    grid-column: 1 / -1;
+    background-color: $logo-color-green;
+    color: $logo-color-brown;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+
+    &__heading {
+        grid-column: 1 / span 2;
+    }
+
+    &__img {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        position: relative;
+        transform: translateY(-50%);
+    }
+
+    &__img-1 {
+        width: 45%;
+        position: absolute;
+        top: 5%;
+        left: 4%;
+        border-radius: 3px;
+        box-shadow: $image-shadow
+    }
+
+    &__img-2 {
+        width: 50%;
+        position: absolute;
+        top: 55%;
+        left: 35%;
+        border-radius: 3px;
+        box-shadow: $image-shadow;
+
+    }
+
+    &__text {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        font-size: 2rem;
+        padding: 2rem;
+        
+    }
+}
+
+

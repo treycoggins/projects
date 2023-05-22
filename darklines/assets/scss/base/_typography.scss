@@ -1,0 +1,74 @@
+// BASIC TYPOGRAPHY
+p {
+    font-size: inherit;
+    font-family: $font-primary;
+    font-weight: $fw-normal;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 8rem;
+    font-family: $font-primary;
+    font-weight: $fw-bold;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font-size: 6rem;
+    font-family: $font-primary;
+    font-weight: $fw-semibold;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+h3 {
+    font-size: 4rem;
+    font-family: $font-primary;
+    font-weight: $fw-medium;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+h4 {
+    font-size: 3rem;
+    font-family: $font-primary;
+    font-weight: $fw-lighter;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+h5 {
+    font-size: 1.8rem;
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+// FONT STYLES
+
+
+// MARGIN STYLES
+.mb-sm { margin-bottom: 2rem; }
+.mb-md { margin-bottom: 4rem; }
+.mb-lg { margin-bottom: 8rem; }
+.mb-xl { margin-bottom: 10rem; }
+
+.mt-sm { margin-top: 2rem; }
+.mt-md { margin-top: 4rem; }
+.mt-lg { margin-top: 8rem; }
+.mt-xl { margin-top: 10rem; }
+
+// ICON STYLES
+
+
+// MISCELLANEOUS
+.uppercase {
+    text-transform: uppercase;
+}

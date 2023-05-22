@@ -1,0 +1,13 @@
+.header {
+    background-image: linear-gradient(to bottom, rgba($color-black-dark, .8), rgba($color-black-dark, .4)), url('assets/img/back-tat.jpg');
+    background-size: cover;
+    grid-row: 1 / 2;
+    grid-column: col-start 1 / col-end 6;
+    box-shadow: inset 0px 0px 10px 10px $color-black-light;
+}
+
+#logo {
+    width: 50%;
+    height: auto;
+    margin: 6rem 1rem;
+}

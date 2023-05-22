@@ -1,0 +1,18 @@
+
+.landing {
+    grid-row: landing-start / landing-end;
+    grid-column: 2 / -1;
+}
+
+.sidebar {
+    grid-row: landing-start / landing-end;
+    grid-column: 1 / span 4;
+    align-self: end;
+    color: $color-white-muted;
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding: 10rem 3rem;
+    line-height: 3rem;
+}
+
+

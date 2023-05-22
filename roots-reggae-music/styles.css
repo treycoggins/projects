@@ -1,0 +1,261 @@
+/*CSS variables section*/
+:root {
+  color: #fff;
+  background: #ececec;
+}
+
+/*General CSS and CSS reset*/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #532146;
+  height: 100svh;
+  width: 100dvw;
+  z-index: 10;
+}
+.spinner {
+  z-index: 3;
+  color: #b26e08e0;
+  transition: opacity 1s;
+  width: 8rem;
+  height: 8rem;
+}
+.modal-header {
+  font-weight: 700;
+}
+.modal-content {
+  background: linear-gradient(
+    to bottom right,
+    #ad3f92e5 30%,
+    #ee5353d8 80%,
+    #ec940ee0 100%
+  );
+  color: #a6ee53;
+  font-weight: 700;
+}
+.modal-select {
+  margin: 0 4rem;
+  width: 5rem;
+  background-color: #ad3f9100;
+  color: #a6ee53;
+}
+.modal-select > option {
+  background-color: #ad3f92e5;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.navbar {
+  height: 10%;
+  width: 100vw;
+  background-image: linear-gradient(
+    45deg,
+    #ad3f92 20%,
+    #ee5353 50%,
+    #ec940e 90%
+  );
+}
+.navbar__brand {
+  height: 10rem;
+  width: 10rem;
+}
+.nav-link {
+  display: inline-block;
+  position: relative;
+  font-weight: 300;
+  color: #ececec;
+}
+.navbar-toggler {
+  margin-right: 3rem;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ececec;
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: transparent;
+  color: white;
+  font-weight: 400;
+}
+.hero {
+  background-image: url('img/hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100dvh;
+}
+.hero__header {
+  text-transform: uppercase;
+  font-weight: 800;
+  background: linear-gradient(
+    to bottom right,
+    #ad3f92e5 20%,
+    #ee5353d8 50%,
+    #ec940ee0 90%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.hero__header__sub {
+  width: max-content;
+}
+.btn__book {
+  width: max-content;
+}
+.card-img-top {
+  height: 20rem;
+}
+.card-text {
+  font-size: clamp(2rem, 5rem);
+}
+.carousel-inner {
+  width: 70%;
+  margin: auto auto;
+}
+.carousel-item > img {
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
+.card img {
+  height: 30rem;
+}
+.card-title {
+  font-size: 2rem;
+}
+.card-text {
+  font-size: 1.8rem;
+}
+.sponsor__img {
+  display: inline-block;
+  margin: 4rem 0;
+  width: 25rem;
+  height: 20rem;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.learn-more {
+  height: max-content;
+  width: max-content;
+  font-size: 1.8rem;
+  bottom: 0;
+}
+.ticket__card {
+  width: 35rem;
+  height: 40rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+  padding: 3rem;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.ticket__card__title {
+  color: black;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
+.ticket__card__icon {
+  width: 10rem;
+  height: 10rem;
+  margin: auto;
+}
+.ticket__card__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.ticket__price {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem;
+  font-weight: 800;
+  font-size: 2rem;
+  background: black;
+}
+.table {
+  width: 80vw;
+  max-width: 800px;
+}
+.table th {
+  vertical-align: middle;
+  width: 25%;
+  font-size: 1.4rem;
+}
+.table td {
+  text-align: center;
+  vertical-align: middle;
+  height: 6rem;
+}
+.check {
+  color: green;
+  margin: auto auto;
+}
+.book__image {
+  width: 40rem;
+  height: 45rem;
+}
+.quote-footer {
+  text-align: right;
+  font-style: italic;
+}
+#faq {
+  height: 50rem;
+}
+.dropdown-menu {
+  font-size: 2rem;
+}
+.dropdown-item > a {
+  text-decoration: none;
+}
+.dropdown-link {
+  cursor: pointer;
+  color: #ad3f92;
+}
+.footer {
+  height: 100%;
+}

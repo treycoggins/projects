@@ -1,0 +1,49 @@
+// Margins
+.mt-sm { margin-top: 2rem; }
+.mt-md { margin-top: 6rem; }
+.mt-lg { margin-top: 10rem; }
+
+.mb-sm { margin-bottom: 2rem; }
+.mb-md { margin-bottom: 6rem; }
+.mb-lg { margin-bottom: 10rem; }
+
+
+// Font Styles
+.strong {
+    font-size: inherit;
+    font-weight: 600;
+}
+
+.green {
+    color: $color-green-light;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+
+// Buttons
+.btn {
+    background-color: $color-green-light;
+    color: $color-white;
+    border: 2px solid $color-brown-dark;
+    font-weight: 600;
+}
+
+// Forms
+.form {
+    background-color: $color-bright-white;
+    margin: 2rem;
+
+    input {
+        background-color: $color-blue-light;
+        color: $color-gray-dark;
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 2;
+        margin: .4rem 1.4rem;
+        border: none;
+        padding: 1rem .6rem;
+    }
+}

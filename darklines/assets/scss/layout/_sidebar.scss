@@ -1,0 +1,29 @@
+.sidebar {
+    background-color: $color-black-light;
+    grid-row: 1 / 2;
+    grid-column: col-start 7 / full-end;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &__title {
+        font-size: 10rem;
+        font-family: $font-accent;
+        color: $color-gray-dark;
+        text-align: center;
+    }
+
+    &__msg {
+        font-size: 2.5rem;
+        font-family: $font-primary;
+        text-align: justify;
+        margin: 3rem;
+        color: $color-gray-dark;
+    }
+
+    &__scroll {
+        display: block;
+        margin: auto auto;
+    }
+}

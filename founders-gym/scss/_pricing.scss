@@ -1,0 +1,63 @@
+.pricing {
+    grid-row: pricing-start / pricing-end;
+    
+   
+    &__heading {
+        text-align: center;
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+
+        @media only screen and (min-width: $bp-tabland) {
+            flex-direction: row;
+            justify-content: space-around;
+            margin-bottom: 6rem;
+        }
+
+
+    }
+
+    &__card {
+        margin: 2rem auto;
+        width: 300px;
+        height: auto;
+        background-color: $color-purple;
+        border-radius: 5px;
+        color: $color-yellow;
+
+        &__item {
+            align-self: center;
+            margin: 4rem 2rem;
+        }
+
+        &__heading {
+            font-size: 2.4rem;
+            font-weight: 300;
+            padding: 1rem;
+            text-align: center;
+
+        }
+
+        &__text {
+            padding: .5rem;
+            font-size: min(70vw, 2rem);
+            margin-left: 6rem;
+            text-align: left;
+            
+        }
+
+        &__list {
+            margin-bottom: 2rem;
+        }
+
+        &__price {
+            font-size: min(70vw, 3rem);
+            text-align: center;
+            list-style-type: none;
+        }
+    }
+}

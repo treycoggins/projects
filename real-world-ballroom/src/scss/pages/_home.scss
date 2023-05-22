@@ -1,0 +1,212 @@
+#home {
+    grid-template-rows: [nav-start] 6vh [nav-end head-start] 94vh [head-end side-start] 100vh [side-end main-start] min-content [main-end testimonials-start] min-content [testimonials-end footer-start] 20vh [footer-end];
+    
+  .nav {
+    &__links {
+      display: none;
+    }
+  }
+
+  .header {
+    grid-row: head-start / head-end;
+    grid-column: full-start / full-end;
+    background-image: linear-gradient(to right bottom, rgba($color-red, 0.7), rgba($color-red, 0.8)), url('../../../assets/img/dancing-couple.png');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-rows: min-content min-content 2fr 1fr; 
+    row-gap: 2rem;
+    position: relative;
+
+    &__announcement {
+      background-color: $color-red;
+      color: $color-white;
+      padding: 1rem;
+      height: 12vh;
+      width: min-content;
+      line-height: 1.2;
+      justify-self: center;
+      box-shadow: 1px 2px 4px $color-black;
+    }
+    &__logo {
+      justify-self: center;
+      margin: 1rem 0;
+    }
+    
+    &__heading {
+      text-align: center;
+      color: $color-beige;
+      text-transform: capitalize;
+      margin: 0 1rem;
+      align-self: center;
+
+    }
+    &__cta {
+      padding: 2rem 4rem;
+      align-self: start;
+    }
+  }
+  .sidebar {
+    grid-row: side-start / side-end;
+    display: grid;
+    grid-template-rows: min-content;
+    row-gap: 2rem;
+    background-color: rgba($color-red, 0.8);
+    color: $color-beige;
+    padding: 2rem;
+ 
+    &__awards {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem;
+
+      & img {
+        height: 15rem;
+        width: 12rem;
+        border-radius: 4px;
+      }
+    }
+  }
+  .main {
+    grid-row: main-start / main-end;
+    grid-column: min-content 2fr;
+    background-color: $color-black;
+    &__heading {
+      margin: 1rem;
+    }
+    &__map {
+      display: block;
+      margin: 4rem auto;
+    }
+  }
+
+  .testimonials {
+    grid-row: testimonials-start / testimonials-end;
+    grid-column: full-start / full-end;
+    background-color: $color-gray-light;
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    row-gap: 3rem;
+    padding: 2rem;
+
+    &__heading {
+      grid-column: 1 / -1;
+    }
+    .card {
+      grid-column: 2 / 3;
+      background-color: rgba($color-red, 0.8);
+      padding: 2rem 0;
+      border-radius: 5px;
+      position: relative;
+    
+      &__img {
+        border-radius: 10px;
+        width: 100%;
+      }
+      &__text {
+          font-family: serif;
+          color: $color-gray-light;
+          padding: 1rem;
+        &::before {
+          content: open-quote;
+          vertical-align: bottom;
+
+        }
+        
+        &::after {
+          content: close-quote;
+          text-align: right;
+          float: right;
+        }
+        
+        &::before,
+        &::after {
+          display: inline;
+          color: $color-gray-light;
+          font-size: 4rem;
+          position: relative;
+        }
+      }
+      cite {
+        text-align: right;
+        float: right;
+        padding: 2rem;
+        color: $color-gray-light;
+      }
+    }
+  }
+  .section-gallery {
+    grid-row: section-start 2 / section-end 2;
+    grid-column: full-start / full-end;
+    background-color: $color-black;
+
+  }
+  .footer {
+    grid-row: footer-start / footer-end;
+    background-color: $color-beige;
+  }
+}
+
+@media only screen and (min-width: $bp-tabport) {
+ #home {
+  grid-template-rows: [head-start] 100vh [head-end main-start] min-content [main-end testimonials-start] min-content [testimonials-end footer-start] 20vh [footer-end];
+  .nav {
+    &__links {
+      display: flex;
+    }
+    &__burger {
+      display: none;
+    }
+  }
+  
+  .header {
+    grid-column: full-start / col-end 8;
+
+    &__announcement {
+      width: 30vw;
+      height: auto;
+      justify-self: start;
+    }
+    &__cta {
+      display: none;
+    }
+  }
+  .sidebar {
+    grid-row: head-start / head-end;
+    grid-column: col-start 9 / full-end;
+  }
+  .main {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    &__map {
+      grid-column: 1 / 2;
+      height: 45rem;
+      width: 50rem;
+    }
+  }
+  
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 12rem;
+
+    &__heading {
+      grid-column: 1 / -1;
+    }
+    .card {
+      & img {
+        height: 50vh;
+      }
+    }
+    .card1 {
+      grid-column: 1 / 2;
+    }
+    .card2 {
+      grid-column: 2 / 3;
+    }
+    .card3 {
+      grid-column: 3 / 4;
+    }
+  }
+ }
+}
