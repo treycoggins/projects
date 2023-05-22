@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SurfTurkey.net</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KL5Z2JDWWR"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KL5Z2JDWWR');
+    </script>
+
+  </head>
+    <body class="container">
+        <header class="header header-contact">
+            <nav class="navbar">
+                <div class="navbar-menu__btn">
+                    <div class="navbar-menu__btn__burger"></div>
+                </div>
+                <ul class="navbar-menu no-select" data-viewport="closed">
+                    <li class="navbar-menu__item"><a href="about.html">our story</a></li>
+                    <li class="navbar-menu__item"><a href="projects.html">projects</a></li>
+                    <li class="navbar-menu__item"><a href="contactus.html">contact us</a></li>
+                    <li class="navbar-menu__item"><a href="blog.html">blog</a></li>
+                    <li class="navbar-menu__item"><a href="index.html">home</a></li>
+                </ul>
+            </nav>
+            <h1 class="mt-xl mb-sm">Contact</h1>
+            <h4 class="header-contact__info mb-md fade-in">If you are interested in pursuing our services please fill out the form below and someone will reach out to you shortly!</h4>
+        </header>
+
+        <main class="main-content-contact">
+            <form class="form" action="assets/php/contact_form.php" method="post">
+                <div class="form-group">
+                    <div class="fname form-control">
+                        <label>First Name</label>
+                        <input class="form-input" type="text" name="first-name" id="first-name" autofocus>
+                    </div>
+                    <div class="lname form-control">
+                        <label>Last Name</label>
+                        <input class="form-input" type="text" name="last-name" id="last-name">
+                    </div>
+                    <div class="email form-control">
+                        <label>E-mail</label>
+                        <input class="form-input" type="email" name="email" id="email">
+                    </div>
+                    <div class="phone form-control">
+                        <label>Mobile Phone</label>
+                        <input class="form-input" type="text" name="phone" id="phone">
+                    </div>
+                    <div class="bname form-control">
+                        <label>Business Name</label>
+                        <input class="form-input" type="text" name="business-name" id="business-name">
+                    </div>
+                    <div class="baddress form-control">
+                        <label>Business Address</label>
+                        <input class="form-input" type="text" name="address" id="address">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="city form-control">
+                        <label>City</label>
+                        <input class="form-input" type="text" name="city" id="city">
+                    </div>
+                    <div class="state form-control">
+                        <label>State</label>
+                        <select class="form-input" type="text" name="state" id="state" size="1">
+                            <option value="" selected></option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">Dist of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                    <div class="zip form-control">
+                        <label>Zip Code</label>
+                        <input class="form-input" type="text" name="zip-code" id="zip-code">
+                    </div>
+                    <div class="comments form-control">
+                        <label for="comments">Comments</label>
+                        <textarea class="form-input" name="comments" id="comments" rows="10" placeholder="Tell us more..."></textarea>
+                    </div>
+                </div>
+                <div class="form__button-group">
+                    <button class="submit form-submit" type="submit">Submit</button>
+                    <input class="reset form-reset" type="reset" value="Clear Form">
+                    <p class="disclaimer mt-sm">By providing the information on the form above, including phone number, and clicking submit, I consent to receive email and text messages from us regarding services we offer. We will not initiate contact by phone call.</p>
+                </div>
+            </form>
+            <div class="contact-hero">
+                <img id="contact-hero" src="assets/img/home/surfturkey_mod.png" alt="Turkey on a surfboard" />
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__copy centered">This website was designed and developed by SurfTurkey.net &copy;2022</p>
+        </footer>
+
+
+    </body>
+
+    <script src="assets/js/app.js"></script>
+</html>

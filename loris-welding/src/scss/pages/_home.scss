@@ -1,0 +1,126 @@
+.container {
+  display: grid;
+  grid-template-rows: 100lvh repeat(3, min-content) 10vh;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+#hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.header {
+  grid-column: full-start / full-end;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__heading {
+    color: $color-yellow;
+    padding: 1.5rem;
+
+  }
+}
+
+.main {
+  grid-column: main-start / main-end;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__heading {
+    
+  }
+  &__img {
+    border-radius: 50%;
+    height: 24rem;
+    width: 24rem;
+    margin: 3rem auto;
+  }
+}
+
+.services {
+  grid-row: 3 / 4;
+  grid-column: full-start / full-end;
+  background-color: $color-gray-light;
+  margin: 2rem 0;
+}
+
+.contact {
+  grid-row: 4 / 5;
+  grid-column: main-start / main-end;
+
+  &__heading {
+    margin: 2rem;
+  }
+  & i {
+    font-size: 3rem;
+    color: $color-brick;
+  }
+  
+  &__directions {
+    margin: 3rem 0 0 0;
+  }
+
+  &__map {
+    margin: auto auto;
+  }
+}
+
+.form {
+  margin: 3rem 0 0 0;
+  &__control {
+    display: flex;
+    flex-direction: column;
+  }
+  & label {
+    font-size: $size-heading-5;
+    color: $color-gray-dark;
+    font-family: $font-primary;
+  }
+  &__input {
+    margin: 0 0 1rem 0;
+    max-width: 70%;
+    height: 3rem;
+  }
+  & textarea {
+    margin: 1rem 0 0 0;
+  }
+  &__submit {
+    text-transform: uppercase;
+    letter-spacing: 2;
+    background-color: $color-yellow;
+    color: $color-gray-dark;
+    border: 0;
+    border-radius: 20px;
+    padding: 1rem 3rem;
+    margin: 3rem auto;
+  }
+}
+
+.footer {
+  grid-row: 5 / 6;
+  grid-column: full-start / full-end;
+  background-color: $color-gray-light;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  & a {
+    color: $color-brick;
+  }
+}

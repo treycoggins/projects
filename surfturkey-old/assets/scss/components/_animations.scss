@@ -1,0 +1,20 @@
+.fade-in {
+    animation: fade-in 2s ease 0s 1 normal forwards;
+}
+
+.drop {
+    animation: drop-from-above 3s ease 0s 1 normal forwards;
+}
+
+.navbar-menu__btn.open .navbar-menu__btn__burger {
+    transform: translateX(-5rem);
+    background: transparent;
+    box-shadow: none;
+}
+
+.navbar-menu__btn.open .navbar-menu__btn__burger::before {
+    transform: rotate(45deg) translate(3.5rem, -3.5rem);
+}
+.navbar-menu__btn.open .navbar-menu__btn__burger::after {
+    transform: rotate(-45deg) translate(3.5rem, 3.5rem);
+}

@@ -1,0 +1,19 @@
+.btn {
+    height: 5rem;
+    width: 22rem;
+    outline: none;
+    text-transform: uppercase;
+    background-color: $color-orange;
+    border-radius: 5rem;
+    border: none;
+    color: $color-gray-dark;
+    font-size: 2rem;
+    font-weight: $fw-semibold;
+    cursor: pointer;
+    transition: transform 0s;
+
+    &:active {
+        transform: translateY(4px);
+    }
+}
+

@@ -1,0 +1,44 @@
+.header-about {
+    margin: 10rem 2rem;
+    &__info {
+        margin: 0 3rem;
+        max-width: 60%;
+    }
+}
+
+.main-content-about {
+    margin: 4rem 4rem;
+}
+
+.about {
+    &__section-1 {
+        text-indent: 6rem;
+    }
+    &__section-2 {
+        text-indent: 6rem;
+    }
+    &__section-3 {
+        text-indent: 6rem;
+    }
+}
+
+#trey-court {
+    float: left;
+    border-radius: 10px;
+    margin: 2rem 3rem 0 0;
+    height: auto;
+    width: 30rem;
+}
+#dogs-photo {
+    float: right;
+    border-radius: 10px;
+    margin: 2rem 3rem;
+    height: auto;
+    width: 25rem;
+}
+
+.bio-trey {
+    line-height: 1.8;
+    margin: 2rem;
+    max-width: 100%;
+}

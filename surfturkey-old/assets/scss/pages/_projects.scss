@@ -1,0 +1,44 @@
+.header-projects {
+    margin: 10rem 2rem;
+
+    &__info {
+        margin: 0 3rem;
+        width: 60%;
+    }
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        display: flex;
+        margin: 2rem;
+        align-items: center;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        margin: 0 2rem;
+        line-height: 2.2;
+    }
+}
+
+.thumbnail {
+    max-width: 90px;
+    height: auto;
+}
+
+@media only screen and (min-width: $bp-tabport) {
+    .projects {
+        &__item {
+            max-width: 70%;
+        }
+        &__text {
+            font-size: 2rem;
+        }
+    }
+    .thumbnail {
+        max-width: 200px;
+    }
+}

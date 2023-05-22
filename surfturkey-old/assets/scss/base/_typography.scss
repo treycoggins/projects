@@ -1,0 +1,74 @@
+// BASIC TYPOGRAPHY
+p {
+    font-size: inherit;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: $fw-normal;
+    line-height: normal;
+}
+h1 {
+    font-size: 8rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: $fw-bold;
+    line-height: normal;
+}
+h2 {
+    font-size: 6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: $fw-semibold;
+    line-height: normal;
+}
+h3 {
+    font-size: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: $fw-medium;
+    line-height: normal;
+}
+h4 {
+    font-size: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: $fw-lighter;
+    line-height: normal;
+}
+h5 {
+    font-size: 1.8rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: $fw-light;
+    line-height: normal;
+}
+a {
+    text-decoration: none;
+}
+
+// FONT STYLES
+.accent-font {
+    color: $color-orange;
+    font-style: italic;
+}
+.centered {
+    text-align: center;
+}
+
+// MARGIN STYLES
+.mb-sm { margin-bottom: 2rem; }
+.mb-md { margin-bottom: 4rem; }
+.mb-lg { margin-bottom: 8rem; }
+.mb-xl { margin-bottom: 10rem; }
+
+.mt-sm { margin-top: 2rem; }
+.mt-md { margin-top: 4rem; }
+.mt-lg { margin-top: 8rem; }
+.mt-xl { margin-top: 10rem; }
+
+// ICON STYLES
+.icon-lg {
+    font-size: 7rem;
+    padding: 3rem;
+}
+
+// MISCELLANEOUS
+.disclaimer {
+    font-size: 1rem;
+    color: $color-white;
+    text-align: center;
+    width: 25rem;
+}
