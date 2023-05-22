@@ -41,7 +41,7 @@
   .header {
     grid-row: head-start / head-end;
     grid-column: full-start / full-end;
-    background-image: linear-gradient(to right bottom, rgba($color-red, 0.7), rgba($color-red, 0.8)), url('../../../assets/img/dancing-couple.png');
+    background-image: linear-gradient(to right bottom, rgba($color-red, 0.7), rgba($color-red, 0.8)), url('../img/dancing-couple.png');
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -181,17 +181,7 @@
 @media only screen and (min-width: $bp-tabland) {
  #home {
   grid-template-rows: [head-start] 100vh [head-end main-start] min-content [main-end testimonials-start] min-content [testimonials-end footer-start] 20vh [footer-end];
-  .nav {
-    grid-column: col-start 6 / col-end 8;
-    grid-row: 1 / 2;
-    &__links {
-      display: flex;
-    }
-    &__burger {
-      display: none;
-    }
-  }
-  
+ 
   .header {
     grid-column: full-start / col-end 8;
 

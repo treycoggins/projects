@@ -338,7 +338,7 @@ ul {
 #home .header {
   grid-row: head-start/head-end;
   grid-column: full-start/full-end;
-  background-image: linear-gradient(to right bottom, rgba(104, 3, 1, 0.7), rgba(104, 3, 1, 0.8)), url("../../../assets/img/dancing-couple.png");
+  background-image: linear-gradient(to right bottom, rgba(104, 3, 1, 0.7), rgba(104, 3, 1, 0.8)), url("../img/dancing-couple.png");
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -464,16 +464,6 @@ ul {
 @media only screen and (min-width: 1080px) {
   #home {
     grid-template-rows: [head-start] 100vh [head-end main-start] min-content [main-end testimonials-start] min-content [testimonials-end footer-start] 20vh [footer-end];
-  }
-  #home .nav {
-    grid-column: col-start 6/col-end 8;
-    grid-row: 1/2;
-  }
-  #home .nav__links {
-    display: flex;
-  }
-  #home .nav__burger {
-    display: none;
   }
   #home .header {
     grid-column: full-start/col-end 8;
