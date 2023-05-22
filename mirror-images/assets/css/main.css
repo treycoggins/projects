@@ -228,5 +228,13 @@ ul {
 }
 .container {
   display: grid;
-  grid-template-columns: [full-start] minmax(2vw, 4vw) [main-start] repeat(6, [col-start] minmax(min-content, 1fr) [col-end]) [main-end] minmax(2vw, 4vw) [full-end];
+  grid-template-columns: [full-start] minmax(2vw, 4vw) [main-start] repeat(6, [col-start] minmax(0px, 1fr) [col-end]) [main-end] minmax(2vw, 4vw) [full-end];
+}
+
+.nav__links {
+  display: none;
+}
+#home {
+  background-color: #000000;
+  margin: 2rem;
 }/*# sourceMappingURL=main.css.map */

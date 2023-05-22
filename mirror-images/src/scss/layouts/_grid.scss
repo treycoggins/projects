@@ -1,0 +1,4 @@
+.container {
+    display: grid;
+    grid-template-columns: [full-start] minmax(2vw, 4vw) [main-start] repeat(6, ([col-start] minmax(0px, 1fr) [col-end])) [main-end] minmax(2vw, 4vw) [full-end];
+  }
